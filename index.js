@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 io.on('connection', (socket) => {
   socket.emit('me', socket.id)
 
-  socket.on('disconnet', () => {
+  socket.on('disconnect', () => {
     socket.broadcast.emit("callended");
   })
   socket.on("calluser", ({ userToCall, signalData, from, name }) => {
